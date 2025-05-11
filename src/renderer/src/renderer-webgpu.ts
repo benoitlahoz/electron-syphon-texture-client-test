@@ -83,7 +83,8 @@ const initWebGpu = async (): Promise<void> => {
                             @fragment
                             fn main(@builtin(position) fragCoord: vec4<f32>) -> @location(0) vec4<f32> {
                             let texCoord = fragCoord.xy / vec2<f32>(1280.0, 720.0);
-                            return textureSampleBaseClampToEdge(extTex, mySampler, texCoord);
+                            let flippedTexCoord = vec2<f32>(texCoord.x, 1.0 - texCoord.y);
+                            return textureSampleBaseClampToEdge(extTex, mySampler, flippedTexCoord);
                             }
                         `
           }),

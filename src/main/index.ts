@@ -94,7 +94,6 @@ const createWindow = (): void => {
           })
           const transfer = imported.startTransferSharedTexture()
 
-          console.log('TEX')
           console.log(transfer)
 
           const id = randomUUID()
