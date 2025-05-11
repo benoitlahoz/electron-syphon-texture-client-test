@@ -16,6 +16,7 @@ import {
   SyphonServerDirectoryListenerChannel
   // @ts-ignore
 } from 'node-syphon'
+import { time } from 'node:console'
 
 export function logWithTime(message: string, ...optionalParams: any[]) {
   const date = new Date()
@@ -87,6 +88,7 @@ const createWindow = (): void => {
               width: texture.width,
               height: texture.height
             },
+            timestamp: Date.now() - start,
             sharedTextureHandle: texture.surface,
             ioSurface: texture.surface
           })
@@ -109,7 +111,7 @@ const createWindow = (): void => {
       */
     }
   )
-
+  /*
   const osr = new BrowserWindow({
     width: 1280,
     height: 720,
@@ -120,7 +122,7 @@ const createWindow = (): void => {
       }
     }
   })
-
+  
   // const spout = new SpoutOutput("electron");
 
   osr.webContents.setFrameRate(240)
@@ -131,7 +133,7 @@ const createWindow = (): void => {
   })
 
   const capturedTextures = new Map<string, any>()
-  /*
+  
   ipcMain.on('shared-texture-done', (event, id) => {
     const data = capturedTextures.get(id)
     if (data) {
@@ -146,7 +148,7 @@ const createWindow = (): void => {
       capturedTextures.delete(id)
     }
   })
-  */
+  
   osr.webContents.on(
     'paint',
     (
@@ -154,7 +156,6 @@ const createWindow = (): void => {
       dirty: Electron.Rectangle,
       image: Electron.NativeImage
     ) => {
-      /*
       const texture = event.texture!
       // console.log(texture.textureInfo)
       // @ts-ignore
@@ -170,11 +171,11 @@ const createWindow = (): void => {
 
       // logWithTime('start send shared texture:', id)
       win.webContents.send('shared-texture', id, transfer)
-      */
     }
   )
 
   osr.loadURL('https://app.singular.live/output/6W76ei5ZNekKkYhe8nw5o8/Output?aspect=16:9')
+  */
 }
 
 app.whenReady().then(() => {
