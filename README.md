@@ -1,34 +1,44 @@
 # electron-syphon-texture-client-test
 
-A minimal Electron application with TypeScript
+Test of https://github.com/electron/electron/pull/46811
 
-## Recommended IDE Setup
+## How-To
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+Clone this repo
 
-## Project Setup
-
-### Install
-
-```bash
-$ yarn
+```sh
+git clone https://github.com/benoitlahoz/electron-syphon-texture-client-test.git
 ```
 
-### Development
+Download and extract the Electron build
 
-```bash
-$ yarn dev
+https://github.com/benoitlahoz/electron-syphon-texture-client-test/releases/download/v0.0.1/custom-electron-reitowo.zip
+
+Clone the node-syphon repo
+
+```sh
+git clone https://github.com/benoitlahoz/node-syphon
 ```
 
-### Build
+Switch branch and install
 
-```bash
-# For windows
-$ yarn build:win
+```sh
+cd node-syphon
+git checkout client-to-surface
+yarn
 
-# For macOS
-$ yarn build:mac
+```
 
-# For Linux
-$ yarn build:linux
+Install test dependencies
+
+```sh
+# Add electron from the downloaded dist.
+yarn add link:[MYPATH]/custom-electron-reitowo
+yarn add link:[MYPATH]/node-syphon
+```
+
+Run
+
+```sh
+yarn dev
 ```
