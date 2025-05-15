@@ -53,7 +53,7 @@ const createWindow = (): void => {
         client = new SyphonMetalClient(server)
 
         client.on('texture', (texture: any) => {
-          console.log('Texture is null or undefined', !texture.surface)
+          // console.log('Texture is null or undefined', !texture.surface)
           // FIXME: Look like background throttling doesnt't send texture, with this error
           // -[IOGPUMetalTexture initWithDevice:descriptor:iosurface:plane:field:args:argsSize:]:648: failed assertion `IOSurface argument must not be NULL'
           const codedSize = {
