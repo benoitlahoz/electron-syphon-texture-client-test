@@ -99,6 +99,7 @@ const createWindow = (): void => {
       const { imported, release } = data
 
       imported.release(() => {
+        // Release the node-syphon texture.
         release()
       })
 
